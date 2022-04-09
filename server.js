@@ -4,6 +4,7 @@ const dotenv = require('dotenv');
 const colors = require('colors');
 const morgan = require('morgan');
 const connectDB = require('./config/db');
+const mongoose = require('mongoose');
 
 dotenv.config({ path: './config/config.env' });
 
@@ -19,7 +20,9 @@ if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
 }
 
+
 app.use('/api/v1/transactions', transactions);
+app.use(express.urlencoded({ extended: false }));
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));
