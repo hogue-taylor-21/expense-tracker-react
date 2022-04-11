@@ -2,6 +2,9 @@
   "name": "expense-tracker-react-3",
   "version": "1.0.0",
   "description": "Backend for expense tracker",
+  "engines": {
+    "node": "16.14.2"
+  },
   "main": "server.js",
   "scripts": {
     "build": "cd client && npm run build",
