@@ -3,13 +3,14 @@
   "version": "1.0.0",
   "description": "Backend for expense tracker",
   "engines": {
-    "node": "16.14.2"
+    "node": "16.14.2",
+    "npm": "8.5.0"
   },
   "main": "server.js",
   "scripts": {
     "build": "cd client && npm run build",
     "install-client": "cd client && npm install",
-    "heroku-postbuild": "nom run install-client && npm run build",
+    "heroku-postbuild": "npm run install-client && npm run build",
     "start": "node server.js",
     "server": "nodemon server",
     "client": "npm start --prefix client",
